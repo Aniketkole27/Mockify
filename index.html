@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockify - AI Virtual Interview Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🛡️ Mockify</div>
+
+        <!-- Page 1: Sign-up Page -->
+        <div id="signup-page">
+            <h2>Welcome to Mockify!</h2>
+            <p>Your creative AI companion for virtual interview practice. Sign up to unlock mock sessions.</p>
+            <form id="signup-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up & Start Mocking!</button>
+            </form>
+        </div>
+
+        <!-- Page 2: Main Dashboard Page (Enhanced with more info) -->
+        <div id="dashboard-page" class="hidden">
+            <h2>Mockify Dashboard</h2>
+            <div class="section profile">
+                <p id="welcome-msg">Welcome back! Let's ace those interviews. 🎤</p>
+            </div>
+            <div class="section">
+                <h3>Quick Start</h3>
+                <p>Select a category and start a creative mock session powered by AI.</p>
+                <select id="category">
+                    <option value="tech">Tech Interviews</option>
+                    <option value="behavioral">Behavioral Questions</option>
+                    <option value="creative">Creative/Fun Scenarios</option>
+                </select>
+                <button onclick="fetchInterviewQuestions()">Start Mock Session</button>
+                <div id="questions"></div>
+            </div>
+            <div class="section">
+                <h3>Recent Sessions</h3>
+                <p>Track your progress (API-connected in future for real data).</p>
+                <ul id="recent-sessions"></ul>
+            </div>
+            <div class="section">
+                <h3>Practice Stats</h3>
+                <p>Sessions Completed: <span id="sessions-count">0</span> | Avg Score: <span id="avg-score">0%</span></p>
+                <p>Overall Progress: <progress id="progress-bar" value="0" max="100"></progress></p>
+                <button onclick="resetStats()">Reset Stats</button>
+            </div>
+            <div class="section">
+                <h3>AI Tips & Upcoming</h3>
+                <p>Tip: Use STAR method for stories! 🚀 Upcoming: Live AI feedback via API.</p>
+            </div>
+            <button onclick="switchPage('signup')">Logout</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
